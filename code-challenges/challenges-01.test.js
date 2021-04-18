@@ -121,6 +121,7 @@ const createList = (availableItems) => {
       array.push(iteam.name);
     }
   });
+  return array;
 };
 
 /* ------------------------------------------------------------------------------------------------

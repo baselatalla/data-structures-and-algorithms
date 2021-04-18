@@ -65,11 +65,11 @@ const greeting = (word) => {
   return array;
 };
 const speaker = (words, callback) => {
-  let array = [];
+  let newArray = [];
   words.forEach((iteam) => {
-    array.push(callback(iteam));
+    newArray.push(callback(iteam));
   });
-  return array;
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -89,7 +89,7 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {

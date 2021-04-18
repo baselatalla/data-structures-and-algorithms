@@ -66,7 +66,11 @@ const greeting = (word) => {
 };
 
 const speaker = (words, callback) => {
-  
+  let array = [];
+  words.forEach((iteam) => {
+    array.push(callback(iteam));
+  });
+  return array;
 };
 
 /* ------------------------------------------------------------------------------------------------

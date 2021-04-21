@@ -82,7 +82,7 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  let regex = /\b[A-Z]\w*/g;
+  let regex = /\b[A-Z].*?\b/g;
   let array=[];
   if(str.match(regex)===null){
     array=[];
@@ -103,7 +103,12 @@ letters A through J, inclusive.
 const citiesAtoJ = (arr) => {
   let array = [];
   let regex = /\b[A-J].*?\b/g;
-  array = arr.match(regex);
+
+  arr.forEach((item)=>{
+    if (item[0].match(regex)) {
+      array.push(item);
+    }
+  });
   return array;
 };
 

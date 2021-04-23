@@ -3,31 +3,40 @@
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
-Write a function called sortStarWarsCharacters that sorts the characters in the starWarsPeople array by height from tallest to shortest.
+Write a function called sortStarWarsCharacters that sorts the characters in
+the starWarsPeople array by height from tallest to shortest.
 ------------------------------------------------------------------------------------------------ */
 
 let starWarsPeople = [
   {
-    "name": "C-3PO",
-    "height": "167",
-    "eye_color": "yellow"
+    'name': 'C-3PO',
+    'height': '167',
+    'eye_color': 'yellow'
   },
   {
-    "name": "Luke Skywalker",
-    "height": "172",
-    "eye_color": "blue"
+    'name': 'Luke Skywalker',
+    'height': '172',
+    'eye_color': 'blue'
   },
   {
-    "name": "R2-D2",
-    "height": "96",
-    "eye_color": "red"
+    'name': 'R2-D2',
+    'height': '96',
+    'eye_color': 'red'
   }
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
-  
-};
+  starWarsArr.sort((a, b) =>{
+    if (parseInt(a.height) > parseInt(b.height)) {
+      return -1;
+    } else if (parseInt(a.height) < parseInt(b.height))
+      return 1;
 
+    else
+      return 0;
+  });
+  return starWarsArr;
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -68,11 +77,9 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  
   for(let i = 0 ; i<= str.length ;i++){
     result.push(str.slice(i));
   }
-  
 
   return result;
 };
@@ -80,23 +87,26 @@ const howMuchPencil = (str) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
-Write a function name wordsToCharList that, given a string as input, returns a new array where every element is a character of the input string.
+Write a function name wordsToCharList that, given a string as input, returns a new array 
+where every element is a character of the input string.
 
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => {
-  // Solution code here...
+const wordsToCharList = (str) => {
+  let result = [];
+  result =str.split('');
+  return result;
 };
 
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-You are making a grocery list for ingredients needed in the gruffalo crumble recipe, below. Rather than taking the entire recipe, you only want a list of the item names.
-
-Write a function named listFoods that takes in the recipe and returns a new array of the food items without any amount or units. Just the name. For example, '1 cup flour' will return 'flour'.
-
+You are making a grocery list for ingredients needed in the gruffalo crumble recipe, below.
+ Rather than taking the entire recipe, you only want a list of the item names.
+Write a function named listFoods that takes in the recipe and returns a new array of the food items
+ without any amount or units. Just the name. For example, '1 cup flour' will return 'flour'.
 Use slice for this function, maybe more than once. The Array.indexOf() method may also be helpful.
 
 Do not use split for this function.
@@ -133,7 +143,14 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  let ingredient = recipe.ingredients;
+  ingredient.forEach(element => {
+    let sliced = element.slice(element.indexOf(' '));
+    let ingred = sliced.slice(1);
+    let xx = ingred.slice(ingred.indexOf(' '));
+    result.push(xx.slice(1));
+    
+  });
   return result;
 };
 

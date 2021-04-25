@@ -41,7 +41,7 @@ const sortStarWarsCharacters = (starWarsArr) => {
 CHALLENGE 2
 
 Write a function named removeThree that takes an index and an array. The function should removes three
- items in the array starting with the value at the index. 
+ items in the array starting with the value at the index.
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
@@ -68,7 +68,7 @@ Write a function named howMuchPencil that takes in a string, as written on the s
 
 As you sharpen the pencil, the string will become shorter and shorter, starting by removing the first letter.
 
-Your function should use slice within a loop and return an array of each successive string result from losing 
+Your function should use slice within a loop and return an array of each successive string result from losing
 letters to the sharpener, until nothing is left.
 
 For example, if the input is 'Welcome', the output will be:
@@ -87,7 +87,7 @@ const howMuchPencil = (str) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
-Write a function name wordsToCharList that, given a string as input, returns a new array 
+Write a function name wordsToCharList that, given a string as input, returns a new array
 where every element is a character of the input string.
 
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
@@ -149,7 +149,7 @@ const listFoods = (recipe) => {
     let ingred = sliced.slice(1);
     let xx = ingred.slice(ingred.indexOf(' '));
     result.push(xx.slice(1));
-    
+
   });
   return result;
 };
@@ -275,7 +275,7 @@ describe('Testing challenge 1', () => {
   test('It should sort the star wars characters by height from tallest to shortest', () => {
     expect(sortStarWarsCharacters(starWarsPeople)[0]['name']).toStrictEqual('Luke Skywalker');
     expect(sortStarWarsCharacters(starWarsPeople)[2]['height']).toStrictEqual('96');
-  })
+  });
 });
 
 describe('Testing challenge 2', () => {
